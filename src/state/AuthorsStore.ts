@@ -1,37 +1,58 @@
-import { makeAutoObservable } from 'mobx'
-import { Author, authorsStaticData } from '../data/authors'
-import { RootStore } from './RootStore'
-
+import { makeAutoObservable } from 'mobx';
+import { Author, authorsStaticData } from '../data/authors';
+import { RootStore } from './RootStore';
 
 export class AuthorsStore {
   constructor(private root: RootStore) {
-    makeAutoObservable(this)
+    makeAutoObservable(this);
   }
-  
-  selectedAuthor: Author | null = null
-  authors: Author[] = []
-  isLoadingAuthors = false
+
+  selectedAuthorId: string | undefined = undefined;
+  authorsData: Author[] = [];
+  isLoadingAuthors = false;
+
+  get authors() {
+    return this.authorsData.map((author) => new AuthorStore(author, this));
+  }
+
+  get selectedAuthor() {
+    return this.authors.find((author) => author.id === this.selectedAuthorId);
+  }
 
   loadAuthors = async () => {
-    this.setIsLoadingAuthors(true)
+    this.setIsLoadingAuthors(true);
 
     // Fake loading time
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    this.setIsLoadingAuthors(false)
-    
-    this.setAuthors(authorsStaticData)
-    
-    if (!this.selectedAuthor) this.setSelectedAuthor(this.authors[0])
+    this.setIsLoadingAuthors(false);
+
+    this.setAuthorData(authorsStaticData);
+
+    if (!this.selectedAuthorId) this.setSelectedAuthor(this.authors?.[0]);
+  };
+
+  setAuthorData = (authors: this['authorsData']) =>
+    (this.authorsData = authors);
+
+  setIsLoadingAuthors = (isLoadingAuthors: this['isLoadingAuthors']) =>
+    (this.isLoadingAuthors = isLoadingAuthors);
+
+  setSelectedAuthor = (author: AuthorStore | null) => {
+    this.selectedAuthorId = author?.id;
+  };
+}
+
+export class AuthorStore {
+  constructor(public data: Author, private authors: AuthorsStore) {
+    makeAutoObservable(this);
   }
 
-  setAuthors = (authors: this['authors']) =>
-    this.authors = authors
+  get id() {
+    return this.fullName;
+  }
 
-  setIsLoadingAuthors = (isLoadingAuthors: this['isLoadingAuthors']) => 
-    this.isLoadingAuthors = isLoadingAuthors
-  
-  setSelectedAuthor = (author: Author | null) => {
-    this.selectedAuthor = author
+  get fullName() {
+    return `${this.data.name.first} ${this.data.name.last}`;
   }
 }

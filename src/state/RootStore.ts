@@ -1,5 +1,5 @@
-import { AuthorsStore } from './AuthorsStore'
+import { AuthorsStore } from './AuthorsStore';
 
 export class RootStore {
-  authors = new AuthorsStore(this)
+  authors = new AuthorsStore(this);
 }
