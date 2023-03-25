@@ -36,6 +36,7 @@ export const PortfolioPage = observer(() => {
           body {
             background: #222;
             color: white;
+            font-family: 'Poppins';
           }
         `}
       />
@@ -54,10 +55,23 @@ const IntroSection = observer(() => {
   } = useRootStore();
 
   return (
-    <Grid container>
-      <Grid item>
+    <Grid
+      container
+      justifyContent={'center'}
+      css={css`
+        padding: 2em 0 4em;
+      `}
+    >
+      <Grid
+        item
+        css={css`
+          text-align: center;
+        `}
+      >
         <Typography variant="h1">{selectedAuthor?.fullName}</Typography>
-        <Typography variant="h2">{selectedAuthor?.data.name.title}</Typography>
+        <Typography variant="h2" color="text.secondary">
+          {selectedAuthor?.data.name.title}
+        </Typography>
       </Grid>
     </Grid>
   );

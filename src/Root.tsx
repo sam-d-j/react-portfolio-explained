@@ -5,6 +5,7 @@ import { PortfolioPage } from './pages/PortfolioPage';
 import { RootStoreProvider } from './state/reactContext';
 import { RootStore } from './state/RootStore';
 import { muiTheme } from './state/theme';
+import '@fontsource/poppins';
 
 export const Root = observer<{ store: RootStore }>(({ store }) => {
   useEffect(() => {

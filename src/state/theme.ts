@@ -2,6 +2,9 @@ import { createTheme } from '@mui/material';
 import * as colors from '@mui/material/colors';
 
 export const muiTheme = createTheme({
+  typography: {
+    fontFamily: 'Poppins, Roboto',
+  },
   palette: {
     text: {
       primary: colors.grey[100],
