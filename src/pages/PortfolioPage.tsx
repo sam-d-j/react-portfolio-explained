@@ -1,8 +1,25 @@
 import { css, Global } from '@emotion/react';
-import { AppBar, CssBaseline, Grid, Typography } from '@mui/material';
+import {
+  Timeline,
+  TimelineItem,
+  TimelineSeparator,
+  TimelineDot,
+  TimelineConnector,
+  TimelineContent,
+  TimelineOppositeContent,
+} from '@mui/lab';
+import {
+  AppBar,
+  CssBaseline,
+  Grid,
+  MenuItem,
+  Select,
+  Typography,
+} from '@mui/material';
 import { observer } from 'mobx-react-lite';
 import { useEffect } from 'react';
 import { useRootStore } from '../state/reactContext';
+import { DateTime } from 'luxon';
 
 export const PortfolioPage = observer(() => {
   const { authors } = useRootStore();
@@ -22,22 +39,25 @@ export const PortfolioPage = observer(() => {
           }
         `}
       />
+
       <Header />
 
       <IntroSection />
+      <ExperienceTimeline />
     </>
   );
 });
 
 const IntroSection = observer(() => {
   const {
-    authors: { selectedAuthorId },
+    authors: { selectedAuthor },
   } = useRootStore();
 
   return (
     <Grid container>
       <Grid item>
-        <Typography variant="h1">Hi, I'm </Typography>
+        <Typography variant="h1">{selectedAuthor?.fullName}</Typography>
+        <Typography variant="h2">{selectedAuthor?.data.name.title}</Typography>
       </Grid>
     </Grid>
   );
@@ -45,23 +65,36 @@ const IntroSection = observer(() => {
 
 const Header = observer(() => {
   const {
-    authors: { selectedAuthor },
+    authors: { selectedAuthor, authors, setSelectedAuthor },
   } = useRootStore();
 
   return (
     <>
       <AppBar component="nav" position="fixed">
-        <div
+        <Grid
+          container
+          justifyContent="end"
           css={css`
-            padding: 1em;
+            padding: 0.5em;
           `}
         >
-          {selectedAuthor?.fullName}
-        </div>
+          <Select
+            size="small"
+            value={selectedAuthor?.id ?? ''}
+            onChange={(e) => setSelectedAuthor(e.target.value)}
+          >
+            {authors.map((author) => (
+              <MenuItem key={author.id} value={author.id}>
+                {author.fullName}
+              </MenuItem>
+            ))}
+            <MenuItem disabled value={''} hidden></MenuItem>
+          </Select>
+        </Grid>
       </AppBar>
       <div
         css={css`
-          padding-top: 4em;
+          padding-top: 6em;
         `}
       ></div>
     </>
@@ -69,5 +102,38 @@ const Header = observer(() => {
 });
 
 const ExperienceTimeline = observer(() => {
-  return <></>;
+  const {
+    authors: { selectedAuthor },
+  } = useRootStore();
+
+  return (
+    <>
+      <Timeline position="alternate">
+        {selectedAuthor?.data.workHistory.map((work) => {
+          return (
+            <>
+              <TimelineItem>
+                <TimelineOppositeContent color="text.secondary">
+                  {DateTime.fromJSDate(work.date.from).toFormat('yyyy-mm')} -{' '}
+                  {DateTime.fromJSDate(work.date.to).toFormat('yyyy-mm')}
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                  <TimelineDot color="secondary" />
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                  <Typography variant="h5">
+                    {work.title} - {work.company}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {work.description}
+                  </Typography>
+                </TimelineContent>
+              </TimelineItem>
+            </>
+          );
+        })}
+      </Timeline>
+    </>
+  );
 });

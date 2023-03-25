@@ -29,7 +29,7 @@ export class AuthorsStore {
 
     this.setAuthorData(authorsStaticData);
 
-    if (!this.selectedAuthorId) this.setSelectedAuthor(this.authors?.[0]);
+    if (!this.selectedAuthorId) this.setSelectedAuthor(this.authors?.[0]?.id);
   };
 
   setAuthorData = (authors: this['authorsData']) =>
@@ -38,8 +38,8 @@ export class AuthorsStore {
   setIsLoadingAuthors = (isLoadingAuthors: this['isLoadingAuthors']) =>
     (this.isLoadingAuthors = isLoadingAuthors);
 
-  setSelectedAuthor = (author: AuthorStore | null) => {
-    this.selectedAuthorId = author?.id;
+  setSelectedAuthor = (authorId: AuthorStore['id'] | undefined) => {
+    this.selectedAuthorId = authorId;
   };
 }
 
