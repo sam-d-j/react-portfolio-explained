@@ -3,8 +3,8 @@ Building a portfolio website is a great way to showcase your work to potential c
 
 ## What it produces
 
-- Produces a static website output
-- Deploys it to Github Pages for access
+- A static website
+- Deploys it to Github Pages for public access
 
 ## What it uses
 
@@ -15,3 +15,5 @@ First, familiarize yourself (as necessary) by reading the docs for each of the t
 - react https://react.dev/
 - mobx https://mobx.js.org/getting-started
 - material-ui https://mui.com/
+- github actions https://docs.github.com/en/actions
+- github pages https://docs.github.com/en/pages
