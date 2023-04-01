@@ -10,3 +10,19 @@
 - [ ] Author switching widget
 - [ ] Make it pretty-ish
 - [ ] Deploy to Github Pages
+
+
+## Features
+
+
+### Essentials
+
+- [ ] About yourself
+- [ ] Work experience
+- [ ] Dark mode button
+
+### Bonus Features
+
+- [ ] Blog
+- [ ] Testimonials 
+- [ ] Third party integrations (insta, linkedin)

@@ -1,6 +1,8 @@
 import { makeAutoObservable } from 'mobx';
 import { Author, authorsStaticData } from '../data/authors';
 import { RootStore } from './RootStore';
+import { createTheme } from '@mui/material';
+import { defaultMuiThemeOptions } from './theme';
 
 export class AuthorsStore {
   constructor(private root: RootStore) {
@@ -54,5 +56,24 @@ export class AuthorStore {
 
   get fullName() {
     return `${this.data.name.first} ${this.data.name.last}`;
+  }
+
+  get colorTheme() {
+    return createTheme({
+      ...defaultMuiThemeOptions,
+
+      palette: {
+        ...defaultMuiThemeOptions.palette,
+        mode: this.data.palette.mode,
+        primary: {
+          ...defaultMuiThemeOptions.palette?.primary,
+          main: this.data.palette.primary,
+        },
+        secondary: {
+          ...defaultMuiThemeOptions.palette?.secondary,
+          main: this.data.palette.secondary,
+        },
+      },
+    });
   }
 }

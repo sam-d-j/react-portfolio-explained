@@ -1,7 +1,7 @@
-import { createTheme } from '@mui/material';
+import { ThemeOptions, createTheme } from '@mui/material';
 import * as colors from '@mui/material/colors';
 
-export const muiTheme = createTheme({
+export const defaultMuiThemeOptions: ThemeOptions = {
   typography: {
     fontFamily: 'Poppins, Roboto',
   },
@@ -13,5 +13,10 @@ export const muiTheme = createTheme({
     primary: {
       main: colors.deepPurple[800],
     },
+    secondary: {
+      main: colors.blueGrey[500],
+    },
   },
-});
+};
+
+export const defaultMuiTheme = createTheme(defaultMuiThemeOptions);
