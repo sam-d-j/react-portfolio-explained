@@ -9,6 +9,8 @@
     "jsxImportSource": "@emotion/react"
   },
   "include": [
+    "markdown.d.ts",
+    "*.d.ts",
     "src",
     "vite.config.ts",
     ".*.js",

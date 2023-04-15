@@ -76,4 +76,8 @@ export class AuthorStore {
       },
     });
   }
+
+  get portfolioPosts() {
+    return this.data.portfolioArticles?.articles;
+  }
 }

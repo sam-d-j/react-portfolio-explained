@@ -31,30 +31,29 @@ export const PortfolioPage = observer(() => {
   }, []);
 
   return (
-    <>
-      <ThemeProvider
-        theme={authors.selectedAuthor?.colorTheme ?? defaultMuiTheme}
+    <ThemeProvider
+      theme={authors.selectedAuthor?.colorTheme ?? defaultMuiTheme}
+    >
+      <Paper
+        css={css`
+          height: 100%;
+          border-radius: 0;
+        `}
       >
-        <Paper
-          css={css`
-            height: 100%;
-            border-radius: 0;
-          `}
+        <Grid
+          container
+          alignItems={'start'}
+          justifyContent={'flex-start'}
+          flexGrow={1}
         >
-          <Grid
-            container
-            alignItems={'start'}
-            justifyContent={'flex-start'}
-            flexGrow={1}
-          >
-            <IntroSection />
-            <ExperienceTimeline />
-            <EducationTimeline />
-            <Footer />
-          </Grid>
-        </Paper>
-      </ThemeProvider>
-    </>
+          <IntroSection />
+          <ExperienceTimeline />
+          <EducationTimeline />
+          <PortoflioArticleCardList />
+          <Footer />
+        </Grid>
+      </Paper>
+    </ThemeProvider>
   );
 });
 
@@ -91,45 +90,69 @@ const IntroSection = observer(() => {
   );
 });
 
+const PortoflioArticleCardList = observer(() => {
+  const {
+    authors: { selectedAuthor },
+  } = useRootStore();
+
+  const theme = useTheme();
+
+  return (
+    <Grid
+      container
+      justifyContent={'center'}
+      css={css`
+        padding: 2em 0 4em;
+        border-bottom: 3px solid ${theme.palette.primary.main};
+        margin-bottom: 3em;
+      `}
+    >
+      {Object.entries(selectedAuthor?.portfolioPosts ?? {}).map(
+        ([key, value]) => {
+          return (
+            <>
+              <value.ReactComponent />
+            </>
+          );
+        },
+      )}
+    </Grid>
+  );
+});
+
 const Footer = observer(() => {
   const {
     authors: { selectedAuthor, authors, setSelectedAuthor },
   } = useRootStore();
 
   return (
-    <>
-      <Grid
-        container
-        justifyContent="space-between"
-        flexGrow={0}
-        alignItems={'end'}
-        css={css`
-          padding: 0.5em;
-          opacity: 0.5;
-          border-top: 1px solid #333;
-        `}
+    <Grid
+      container
+      justifyContent="space-between"
+      flexGrow={0}
+      alignItems={'end'}
+      css={css`
+        padding: 0.5em;
+        opacity: 0.5;
+        border-top: 1px solid #333;
+        padding-bottom: 6em;
+      `}
+    >
+      <Typography variant="body2">Portfolio tut</Typography>
+      <Select
+        label={'Select author'}
+        size="small"
+        value={selectedAuthor?.id ?? ''}
+        onChange={(e) => setSelectedAuthor(e.target.value)}
       >
-        <Typography variant="body2">Portfolio tut</Typography>
-        <Select
-          label={'Select author'}
-          size="small"
-          value={selectedAuthor?.id ?? ''}
-          onChange={(e) => setSelectedAuthor(e.target.value)}
-        >
-          {authors.map((author) => (
-            <MenuItem key={author.id} value={author.id}>
-              {author.fullName}
-            </MenuItem>
-          ))}
-          <MenuItem disabled value={''} hidden></MenuItem>
-        </Select>
-      </Grid>
-      <div
-        css={css`
-          padding-top: 6em;
-        `}
-      ></div>
-    </>
+        {authors.map((author) => (
+          <MenuItem key={author.id} value={author.id}>
+            {author.fullName}
+          </MenuItem>
+        ))}
+        <MenuItem disabled value={''} hidden></MenuItem>
+      </Select>
+    </Grid>
   );
 });
 
@@ -141,12 +164,10 @@ const ExperienceTimeline = observer(() => {
   if (!selectedAuthor?.data.workHistory) return null;
 
   return (
-    <>
-      <WorkTimeline
-        heading="Work Experience"
-        items={selectedAuthor.data.workHistory}
-      />
-    </>
+    <WorkTimeline
+      heading="Work Experience"
+      items={selectedAuthor.data.workHistory}
+    />
   );
 });
 
@@ -158,12 +179,10 @@ const EducationTimeline = observer(() => {
   if (!selectedAuthor?.data.educationExperience) return null;
 
   return (
-    <>
-      <WorkTimeline
-        heading="Education Experience"
-        items={selectedAuthor.data.educationExperience}
-      />
-    </>
+    <WorkTimeline
+      heading="Education Experience"
+      items={selectedAuthor.data.educationExperience}
+    />
   );
 });
 
@@ -178,64 +197,59 @@ const WorkTimeline = observer<{
       to: Date;
     };
   }[];
-}>(({ heading, items }) => {
-  return (
-    <>
-      <Grid
-        container
-        css={css`
-          margin: 1em 0;
-        `}
-      >
-        <Typography
-          variant="h3"
-          color="text.secondary"
-          gutterBottom
-          css={css`
-            flex-grow: 0;
-            width: 100%;
-            text-align: center;
-          `}
-        >
-          {heading}
-        </Typography>
-        <Timeline position="alternate">
-          {items?.map((work, index) => (
-            <TimelineItem key={index}>
-              {/* TODO: describe this in tut */}
-              {!!work.date && (
-                <TimelineOppositeContent color="text.secondary">
-                  {DateTime.fromJSDate(work.date.from).toFormat('yyyy-MM')}{' '}
-                  &mdash;{' '}
-                  {DateTime.fromJSDate(work.date.to).toFormat('yyyy-MM')}
-                </TimelineOppositeContent>
-              )}
-              <TimelineSeparator>
-                <TimelineDot color="primary" />
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent>
-                <Typography
-                  variant="h5"
-                  gutterBottom
-                  css={css`
-                    margin-top: -0.2em;
-                  `}
-                >
-                  {work.title}
-                  <br />
-                  <small>
-                    <em> {work.subTitle}</em>
-                  </small>
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {work.description}
-                </Typography>
-              </TimelineContent>
-            </TimelineItem>
-          ))}
-        </Timeline>
-      </Grid>
-    </>
-  );
-});
+}>(({ heading, items }) => (
+  <Grid
+    container
+    css={css`
+      margin: 1em 0;
+    `}
+  >
+    <Typography
+      variant="h3"
+      color="text.secondary"
+      gutterBottom
+      css={css`
+        flex-grow: 0;
+        width: 100%;
+        text-align: center;
+      `}
+    >
+      {heading}
+    </Typography>
+    <Timeline position="alternate">
+      {items?.map((work, index) => (
+        <TimelineItem key={index}>
+          {/* TODO: describe this in tut */}
+          {!!work.date && (
+            <TimelineOppositeContent color="text.secondary">
+              {DateTime.fromJSDate(work.date.from).toFormat('yyyy-MM')} &mdash;{' '}
+              {DateTime.fromJSDate(work.date.to).toFormat('yyyy-MM')}
+            </TimelineOppositeContent>
+          )}
+          <TimelineSeparator>
+            <TimelineDot color="primary" />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            <Typography
+              variant="h5"
+              gutterBottom
+              css={css`
+                margin-top: -0.2em;
+              `}
+            >
+              {work.title}
+              <br />
+              <small>
+                <em> {work.subTitle}</em>
+              </small>
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {work.description}
+            </Typography>
+          </TimelineContent>
+        </TimelineItem>
+      ))}
+    </Timeline>
+  </Grid>
+));

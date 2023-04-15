@@ -1,11 +1,13 @@
 # TODO
 
 - [x] Build tooling
-- [ ] Data
-- [ ] Mobx Stores
-- [ ] Render "hello world"
-- [ ] Hero section
-- [ ] Experience section
+- [x] Data
+- [x] Mobx Stores
+- [x] Render "hello world"
+- [x] Hero section
+- [x] Experience section
+- [ ] Portoflio browser
+- [ ] .md articles
 - [ ] Contact section
 - [ ] Author switching widget
 - [ ] Make it pretty-ish
