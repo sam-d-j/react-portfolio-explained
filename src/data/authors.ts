@@ -149,6 +149,14 @@ const author2 = {
   biography: '',
   email: 'janedoedoe@someemail.com',
   proficiencies: [],
+  portfolioArticles: {
+    id: 'author1',
+    // re-using articles for show
+    articles: author1PortfolioArticles as any as Record<
+      string,
+      ArticleDocument
+    >,
+  },
   workHistory: [
     {
       date: {
