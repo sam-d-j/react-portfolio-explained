@@ -22,6 +22,7 @@ import { useEffect } from 'react';
 import { useRootStore } from '../state/reactContext';
 import { DateTime } from 'luxon';
 import { defaultMuiTheme } from '../state/theme';
+import { PortoflioArticleCardList } from './articles';
 
 export const PortfolioPage = observer(() => {
   const { authors } = useRootStore();
@@ -36,7 +37,7 @@ export const PortfolioPage = observer(() => {
     >
       <Paper
         css={css`
-          height: 100%;
+          min-height: 100%;
           border-radius: 0;
         `}
       >
@@ -45,6 +46,11 @@ export const PortfolioPage = observer(() => {
           alignItems={'start'}
           justifyContent={'flex-start'}
           flexGrow={1}
+          css={css`
+            > div {
+              margin-bottom: 4em;
+            }
+          `}
         >
           <IntroSection />
           <ExperienceTimeline />
@@ -86,36 +92,6 @@ const IntroSection = observer(() => {
           {selectedAuthor?.data.name.title}
         </Typography>
       </Grid>
-    </Grid>
-  );
-});
-
-const PortoflioArticleCardList = observer(() => {
-  const {
-    authors: { selectedAuthor },
-  } = useRootStore();
-
-  const theme = useTheme();
-
-  return (
-    <Grid
-      container
-      justifyContent={'center'}
-      css={css`
-        padding: 2em 0 4em;
-        border-bottom: 3px solid ${theme.palette.primary.main};
-        margin-bottom: 3em;
-      `}
-    >
-      {Object.entries(selectedAuthor?.portfolioPosts ?? {}).map(
-        ([key, value]) => {
-          return (
-            <>
-              <value.ReactComponent />
-            </>
-          );
-        },
-      )}
     </Grid>
   );
 });
@@ -201,7 +177,8 @@ const WorkTimeline = observer<{
   <Grid
     container
     css={css`
-      margin: 1em 0;
+      margin: 1em auto;
+      max-width: 1024px;
     `}
   >
     <Typography

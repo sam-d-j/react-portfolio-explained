@@ -77,7 +77,7 @@ export class AuthorStore {
     });
   }
 
-  get portfolioPosts() {
+  get portfolioArticles() {
     return this.data.portfolioArticles?.articles;
   }
 }

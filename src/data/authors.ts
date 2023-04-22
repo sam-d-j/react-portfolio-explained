@@ -1,8 +1,12 @@
 import * as author1PortfolioArticles from './author1/portfolio/index';
 
-interface MarkdownDocument {
+export interface ArticleDocument {
   // "unknown" would be more detailed depends on how you structure frontmatter
-  attributes: Record<string, unknown>;
+  attributes: {
+    title: string;
+    description: string;
+    image: string;
+  };
 
   // When "Mode.TOC" is requested
   toc: { level: string; content: string }[];
@@ -31,22 +35,15 @@ export interface Author {
   };
   biography: string;
   email: string;
-
   workHistory?: {
-    date?: {
-      to: Date;
-      from: Date;
-    };
+    date?: { to: Date; from: Date };
     title: string;
     subTitle: string;
     description: string;
   }[];
 
   educationExperience?: {
-    date?: {
-      to: Date;
-      from: Date;
-    };
+    date?: { to: Date; from: Date };
     title: string;
     subTitle: string;
     description: string;
@@ -56,12 +53,12 @@ export interface Author {
 
   portfolioArticles?: {
     id: 'author1';
-    articles?: Record<string, MarkdownDocument>;
+    articles?: Record<string, ArticleDocument>;
   };
 
   blog?: {
     id: 'author1';
-    articles?: Record<string, MarkdownDocument>;
+    articles?: Record<string, ArticleDocument>;
   };
 }
 
@@ -80,7 +77,10 @@ const author1 = {
   email: 'johndoedoe@someemail.com',
   portfolioArticles: {
     id: 'author1',
-    articles: author1PortfolioArticles,
+    articles: author1PortfolioArticles as any as Record<
+      string,
+      ArticleDocument
+    >,
   },
   proficiencies: [],
   workHistory: [
