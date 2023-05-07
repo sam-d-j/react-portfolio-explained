@@ -70,11 +70,137 @@ Resources:
 
 ## Beginner
 
- - todo
-  - 
+### Activity 1 - Startup
+
+- Clone the repo to your local machine
+- Open in VSCode
+- Ensure prerequisites
+  - [ ] NodeJS > 16
+  - [ ] pnpm (npm i -g pnpm)
+- Install dependencies
+- Start local dev server
+
+### Activity 2 - Personalize author data
+
+- Start the dev server
+- Navigate to ./src/data/authors.ts
+- Modify the first user
+  - Name
+  - Email
+  - Work experience
+  - Color theme
+- See changes reflected in running server
+
+### Activity 3 - Finalize author data and create portfolio articles
+
+- Within `./src/data/authors.ts` delete the other example author so you are the only one available
+- Create a new entry within `./src/data/author1/portfolio/portfolio` which highlights this project itself
+  - Reference the fake articles to create your own with the same structure
+  - Take a screenshot of your running website
+  - Put the screenshot in the article folder
+  - Write a short blurb about how the website works
+  - Confirm it shows up in your feed
+- Delete any remaining fake portfolio articles, being careful to maintain references in `./src/data/authors.ts`
+- Ensure the project is now entirely your own with no example data
+
+### Activity 4 - Publish to your own github repository
+
+- Create a empty github repository
+- (Not yet implemented)
+  - Configure your repository to enable github pages feature
+- Commit your changes in git within VSCode
+- In the terminal run: `git remote set-url origin mySshGitRepoUrlGoesHere`
+- Publish branch/push
+- Open github repo in browser to confirm
+- (Not yet implemented)
+  - Github actions will be triggered and deploy your repo to github pages
+  - Navigate to github actions section to review running deployment job
+  - When done, navigate to your github pages URL to see your public portfolio page
 
 ## Intermediate
 
 
+### Activity 1 - Explanation of the patterns, how it works, why it will scale as an enterprise application
+
+#### How the styling/CSS works
+
+- Explain `@emotion/react`, cssprop, styled() and theming
+  - Theming options pros/cons:
+    - Css variables
+    - theme provider
+
+#### How state management/mobx works
+
+- Explain mobx tree, hooks, rendering overview
+
+
+#### How data driven state works
+
+- Explain author data in detail
+
+
+#### How tooling & bundle works
+
+- Explain vite, github actions, github pages
+- Explain linter, tsconfig, packagejson deps justification, pnpm
+
+### Activity 2 - Customize the layout
+
+- Add in a background image from `unsplash.com`
+- Re-order the components to your liking
+- Make your own changes, as you wish, experiment
 
 ## Advanced
+
+### Activity 1 - Use the SpaceX API to create your own custom third party component
+
+- Explain why valuable demonstration
+  - Third party API integration (GraphQL, zeus client)
+  - Integration into mobx state
+- Create components to render launches, images etc. 
+- Store data in localstorage and rehydrate
+  - Demonstrates how to make your app work offline
+  - Optimizes calls to API to prevent unecessary work, API throttling
+
+### Activity 2 - Create a protfolio article about SpaceX integration
+
+- User will write about Activity 1
+  - how it works
+  - why its a good demonstration of patterns
+  - showcase with screenshots
+- Review portfolio article on public website after pushing changes
+
+## Very advanced
+
+### Activity 1 - Integrate Auth0 authentication for an admin dashboard
+
+- Create Auth0 account
+- Wire up new route to /admin page
+- Wire up auth0 to your application
+- Demonstrate login process working in public website
+- Create portfolio article about this page
+
+### Activity 2 - Integrate a database, move your data to the database
+
+- Use something like supabase, faunadb etc.
+- Wire up graphql schemas
+- Admin area components:
+  - To list articles from database
+  - To edit/create articles in markdown
+    - use monoco editor with preview
+- Wire up github secrets, .env files
+- Migrate data in ./src/data to database
+- Wire up public facing portfolio articles list to new database
+- Discard ./src/data
+- Application is now entirely enterprise scalable, data driven
+
+### Activity 3 - Wildcard, allow users to sign up and create their own portfolios on your website
+
+- Restructure db to allow for multiple users
+- Create sign up page
+- Create routing for users to publically showcase their portfolio on your own site
+- ???
+- Profit
+
+
+
