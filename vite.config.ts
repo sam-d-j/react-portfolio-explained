@@ -20,7 +20,7 @@ export default defineConfig({
     fs: { strict: true, allow: ['../../../'] },
   },
   build: {
-    outDir: resolve('./build'),
+    outDir: resolve('./.build'),
     emptyOutDir: true,
   },
 });
