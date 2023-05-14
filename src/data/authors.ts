@@ -152,10 +152,7 @@ const author2 = {
   portfolioArticles: {
     id: 'author1',
     // re-using articles for show
-    articles: author1PortfolioArticles as any as Record<
-      string,
-      ArticleDocument
-    >,
+    articles: {},
   },
   workHistory: [
     {
