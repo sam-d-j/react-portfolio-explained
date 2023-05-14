@@ -92,10 +92,10 @@ export const PortoflioArticleCardList = observer(() => {
   } = useRootStore();
 
   const theme = useTheme();
-  const articles = selectedAuthor?.portfolioArticles;
+  const articles = selectedAuthor?.portfolioArticles ?? {};
   const [openArticleId, setOpenArticleId] = useState<string | undefined>();
 
-  if (!articles) return null;
+  if (!Object.keys(articles).length) return null;
 
   return (
     <>

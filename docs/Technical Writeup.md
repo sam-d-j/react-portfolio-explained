@@ -66,8 +66,6 @@ Vite is one of the most popular tools for this purpose and for good reason. It's
 Resources:
 - [https://vitejs.dev/](https://vitejs.dev/)
 
-
-
 ## Beginner
 
 ### Activity 1 - Startup
