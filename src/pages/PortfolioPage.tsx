@@ -113,6 +113,9 @@ const Footer = observer(() => {
         opacity: 0.5;
         border-top: 1px solid #333;
         padding-bottom: 1em;
+        && {
+          margin-bottom: 0;
+        }
       `}
     >
       <Typography variant="body2">Portfolio tut</Typography>
