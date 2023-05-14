@@ -20,6 +20,7 @@ export default defineConfig({
     port: 9001,
     fs: { strict: true, allow: ['../../../'] },
   },
+  publicDir: resolve('./src/data'),
   build: {
     outDir: resolve('./.build'),
     emptyOutDir: true,

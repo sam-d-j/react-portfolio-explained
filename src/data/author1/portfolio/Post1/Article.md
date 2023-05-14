@@ -1,12 +1,12 @@
 ---
 title: A thing I made
 description: Produced a thing for a company using special tech and data
-image: /data/author1/portfolio/Post1/main.jpg
+image: ./author1/portfolio/Post1/main.jpg
 ---
 
 # A thing I made 1
 
-![](/data/author1/portfolio/Post1/main.jpg)
+![](./author1/portfolio/Post1/main.jpg)
 
 Once upon a time in a faraway land called WobblyWoo, there lived a group of purple unicorns with polka-dotted manes. These unicorns had a peculiar habit of dancing the tango every full moon. Legend had it that if they didn't dance, the moon would turn into a giant watermelon.
 
