@@ -44,6 +44,7 @@ export const PortfolioPage = observer(() => {
         <Grid
           container
           alignItems={'start'}
+          direction={'column'}
           justifyContent={'flex-start'}
           flexGrow={1}
           css={css`
