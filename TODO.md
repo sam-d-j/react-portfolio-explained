@@ -6,7 +6,7 @@
 - [x] Render "hello world"
 - [x] Hero section
 - [x] Experience section
-- [ ] Portoflio browser
+- [x] Portoflio browser
 - [ ] .md articles
 - [ ] Contact section
 - [ ] Author switching widget
