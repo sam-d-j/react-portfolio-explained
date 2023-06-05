@@ -71,6 +71,9 @@ Resources:
 
 ### Activity 1 - Clone the repository
 
+> **Prerequisites**
+> - Create a Github Account
+
 - Login to Github
 - Fork the repository https://github.com/nfour/react-portfolio-explained to your own user
 - Configure your repository to enable the github pages feature
@@ -78,13 +81,16 @@ Resources:
 
 ### Activity 2 - Startup
 
+> **Prerequisites**
+> - Install git
+> - Install VSCode
+> - Install NodeJS at version > 16
+> - Install PNPM like so `npm i -g pnpm`
+
 - Clone the repo to your local machine
 - Open in VSCode
-- Ensure prerequisites
-  - [ ] NodeJS > 16
-  - [ ] pnpm (npm i -g pnpm)
-- Install dependencies
-- Start local dev server
+- Run `pnpm install` in the terminal
+- Start local dev server with `pnpm dev`
 
 ### Activity 3 - Personalize author data
 
