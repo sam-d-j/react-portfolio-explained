@@ -68,6 +68,14 @@ Resources:
 
 ## Beginner
 
+### Things to read up on
+
+- npm https://www.npmjs.com/
+- nodejs https://nodejs.org/
+- react https://react.dev/
+- vscode https://code.visualstudio.com/
+- git https://git-scm.com/
+- github https://github.com/
 
 ### Activity 1 - Clone the repository
 
@@ -82,13 +90,16 @@ Resources:
 ### Activity 2 - Startup
 
 > **Prerequisites**
+> If working locally:
 > - Install git
 > - Install VSCode
 > - Install NodeJS at version > 16
-> - Install PNPM like so `npm i -g pnpm`
+> If using codespaces:
+> - All above is ready
 
 - Clone the repo to your local machine
 - Open in VSCode
+- Install pnpm `npm i -g pnpm`
 - Run `pnpm install` in the terminal
 - Start local dev server with `pnpm dev`
 
