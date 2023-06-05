@@ -68,7 +68,15 @@ Resources:
 
 ## Beginner
 
-### Activity 1 - Startup
+
+### Activity 1 - Clone the repository
+
+- Login to Github
+- Fork the repository https://github.com/nfour/react-portfolio-explained to your own user
+- Configure your repository to enable the github pages feature
+- Visit github pages once enabled
+
+### Activity 2 - Startup
 
 - Clone the repo to your local machine
 - Open in VSCode
@@ -78,7 +86,7 @@ Resources:
 - Install dependencies
 - Start local dev server
 
-### Activity 2 - Personalize author data
+### Activity 3 - Personalize author data
 
 - Start the dev server
 - Navigate to ./src/data/authors.ts
@@ -89,7 +97,7 @@ Resources:
   - Color theme
 - See changes reflected in running server
 
-### Activity 3 - Finalize author data and create portfolio articles
+### Activity 4 - Finalize author data and create portfolio articles
 
 - Within `./src/data/authors.ts` delete the other example author so you are the only one available
 - Create a new entry within `./src/data/author1/portfolio/portfolio` which highlights this project itself
@@ -101,19 +109,6 @@ Resources:
 - Delete any remaining fake portfolio articles, being careful to maintain references in `./src/data/authors.ts`
 - Ensure the project is now entirely your own with no example data
 
-### Activity 4 - Publish to your own github repository
-
-- Create a empty github repository
-- (Not yet implemented)
-  - Configure your repository to enable github pages feature
-- Commit your changes in git within VSCode
-- In the terminal run: `git remote set-url origin mySshGitRepoUrlGoesHere`
-- Publish branch/push
-- Open github repo in browser to confirm
-- (Not yet implemented)
-  - Github actions will be triggered and deploy your repo to github pages
-  - Navigate to github actions section to review running deployment job
-  - When done, navigate to your github pages URL to see your public portfolio page
 
 ## Intermediate
 
