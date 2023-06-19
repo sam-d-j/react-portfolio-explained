@@ -65,6 +65,7 @@ Vite is one of the most popular tools for this purpose and for good reason. It's
 
 Resources:
 - [https://vitejs.dev/](https://vitejs.dev/)
+- [Vite in 100 Seconds (Video)](https://www.youtube.com/watch?v=KCrXgy8qtjM)
 
 ## Beginner
 
