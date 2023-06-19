@@ -74,6 +74,7 @@ Resources:
 - nodejs https://nodejs.org/
 - react https://react.dev/
 - vscode https://code.visualstudio.com/
+- vite https://vitejs.dev/
 - git https://git-scm.com/
 - github https://github.com/
 
@@ -87,7 +88,7 @@ Resources:
 - Configure your repository to enable the github pages feature
 - Visit github pages once enabled
 
-### Activity 2 - Startup
+### Activity 2 - Startup (Locally)
 
 > **Prerequisites**
 > If working locally:
@@ -103,32 +104,55 @@ Resources:
 - Run `pnpm install` in the terminal
 - Start local dev server with `pnpm dev`
 
+### Activity 2 - Startup (Codespaces)
+
+- Open your [newly forked repo in Codespaces](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository)
+- Install pnpm `npm i -g pnpm`
+- Run `pnpm install` in the terminal
+- Start local dev server with `pnpm dev`
+
+
+#### Get the project ready to run
+
+- Open the CLI Terminal
+- Install pnpm:
+  > `npm i -g pnpm`
+- Install dependencies:
+  > `pnpm install` 
+- Start local dev server:
+  > `pnpm dev`
+- Open your website development page via the link provided
+
 ### Activity 3 - Personalize author data
 
-- Start the dev server
-- Navigate to ./src/data/authors.ts
-- Modify the first user
+- Navigate to `./src/data/authors.ts`
+- Modify the first user with your own details:
   - Name
   - Email
-  - Work experience
-  - Color theme
-- See changes reflected in running server
+  - Experience
+- You will see those changes reflected in running server
+- You can also change the color theme
+  - Try changing the colors and see them change on the dev server
 
 ### Activity 4 - Finalize author data and create portfolio articles
 
-- Within `./src/data/authors.ts` delete the other example author so you are the only one available
-- Create a new entry within `./src/data/author1/portfolio/portfolio` which highlights this project itself
-  - Reference the fake articles to create your own with the same structure
-  - Take a screenshot of your running website
-  - Put the screenshot in the article folder
-  - Write a short blurb about how the website works
-  - Confirm it shows up in your feed
-- Delete any remaining fake portfolio articles, being careful to maintain references in `./src/data/authors.ts`
-- Ensure the project is now entirely your own with no example data
+- Navigate to `./src/data/authors.ts`,
+  - Delete the other example author so there is only one author
+- Create a new entry within `./src/data/author1/portfolio/portfolio`
+  - > We will make a post which describes this project itself!
+  - Write the article:
+    - > Try referencing the articles that already exist to create your own with the same structure
+    - Take a screenshot of your running website
+    - Put the screenshot in the article folder
+    - Write a short blurb about how the website works, where it came from, etc.
+    - Save and check that there are no errors in the terminal
+    - Check it out on the running website
+- Clean up: 
+  - Go through the `./src/data/` folder and delete any remaining fake portfolio articles, being careful to clean up references in `./src/data/authors.ts` to avoid errors
 
+The project should be yours now.
 
 ## Intermediate
-
 
 ### Activity 1 - Explanation of the patterns, how it works, why it will scale as an enterprise application
 
