@@ -88,31 +88,27 @@ Resources:
 - Configure your repository to enable the github pages feature
 - Visit github pages once enabled
 
-### Activity 2 - Startup (Locally)
+### Activity 2 - Startup 
 
-> **Prerequisites**
-> If working locally:
-> - Install git
-> - Install VSCode
-> - Install NodeJS at version > 16
-> If using codespaces:
-> - All above is ready
+Choose one of the two development methods below, codespaces or local development.
 
-- Clone the repo to your local machine
-- Open in VSCode
-- Install pnpm `npm i -g pnpm`
-- Run `pnpm install` in the terminal
-- Start local dev server with `pnpm dev`
-
-### Activity 2 - Startup (Codespaces)
+#### Using Codespace development (Beginner friendly/quicker)
 
 - Open your [newly forked repo in Codespaces](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository)
-- Install pnpm `npm i -g pnpm`
-- Run `pnpm install` in the terminal
-- Start local dev server with `pnpm dev`
+- Continue to [Get the project running](#Get-the-project-running)
 
+#### Using Local development (Advanced)
 
-#### Get the project ready to run
+**Prerequisites:**
+- Install `git`
+- Install `VSCode`
+- Install `NodeJS` at version `> 16`
+
+Then:
+- Clone the repo to your local machine
+- Open in VSCode
+
+#### Get the project running
 
 - Open the CLI Terminal
 - Install pnpm:
