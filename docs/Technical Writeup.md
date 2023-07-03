@@ -87,6 +87,12 @@ Resources:
 - Login to Github
 - Fork the repository https://github.com/nfour/react-portfolio-explained to your own user
 - Configure your repository to enable the github pages feature
+  - Goto settings
+  - In the sidebar, select Pages
+  - In the dropdown, select Deploy with github Actions
+  - Save, then visit Actions (top left of screen)
+  - Trigger a workflow for Static deploy, select branch `main`
+  - Wait for the project to build and you should see a URL in the deploy step output
 - Visit github pages once enabled
 
 ### Activity 2 - Startup 
