@@ -1,6 +1,8 @@
 # React Portfolio Tutorial & Boilerplate
 Building a portfolio website is a great way to showcase your work to potential clients or employers. With the use of React, Mobx, and Vite, you can create a website that is both visually appealing and functional.
 
+![image](https://github.com/nfour/react-portfolio-explained/assets/2108452/de414160-ace9-4558-a491-358e5eb0629f)
+
 -------------------------------------
 
 + [The Guide](#the-guide)
