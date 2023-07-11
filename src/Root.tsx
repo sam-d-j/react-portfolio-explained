@@ -10,7 +10,6 @@ import { Global, css } from '@emotion/react';
 export const Root = observer<{ store: RootStore }>(({ store }) => {
   return (
     <>
-      <CssBaseline />
       <Global
         styles={css`
           html,
@@ -24,6 +23,7 @@ export const Root = observer<{ store: RootStore }>(({ store }) => {
       />
       <RootStoreProvider value={store}>
         <ThemeProvider theme={defaultMuiTheme}>
+          <CssBaseline />
           <PortfolioPage />
         </ThemeProvider>
       </RootStoreProvider>
