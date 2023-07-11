@@ -23,13 +23,11 @@ export class AuthorsStore {
   }
 
   loadAuthors = async () => {
-    this.setAuthorData(authorsStaticData);
-
     // Do some fake loading which we can fill out later with a real API call
     this.setIsLoadingAuthors(true);
 
     // Fake loading time
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
 
     this.setIsLoadingAuthors(false);
 
