@@ -1,5 +1,6 @@
 import { makeAutoObservable } from 'mobx';
-import { Author, authorsStaticData } from '../data/authors';
+import { authorsStaticData } from '../data/authors';
+import { Author } from '../data/Author'
 import { RootStore } from './RootStore';
 import { createTheme } from '@mui/material';
 import { defaultMuiThemeOptions } from './theme';

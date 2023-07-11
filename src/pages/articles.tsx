@@ -10,7 +10,7 @@ import {
   useTheme,
 } from '@mui/material';
 import { observer } from 'mobx-react-lite';
-import { ArticleDocument } from '../data/authors';
+import { ArticleDocument } from '../data/ArticleDocument'
 import { useRootStore } from '../state/reactContext';
 import { css } from '@emotion/react';
 import { useState } from 'react';
