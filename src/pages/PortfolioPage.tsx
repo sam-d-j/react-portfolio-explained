@@ -9,6 +9,7 @@ import {
   TimelineOppositeContent,
 } from '@mui/lab';
 import {
+  CssBaseline,
   Grid,
   MenuItem,
   Paper,
@@ -36,6 +37,7 @@ export const PortfolioPage = observer(() => {
     <ThemeProvider
       theme={authors.selectedAuthor?.colorTheme ?? defaultMuiTheme}
     >
+      <CssBaseline />
       <Paper
         css={css`
           min-height: 100%;
@@ -238,5 +240,6 @@ const WorkTimeline = observer<{
 
 function inputDateToText(input: DateInputs) {
   if (typeof input === 'string') return input;
+
   return DateTime.fromJSDate(input).toFormat('yyyy-MM');
 }
