@@ -3,42 +3,41 @@ Building a portfolio website is a great way to showcase your work to potential c
 
 -------------------------------------
 
-+ [Guide](#guide)
++ [The Guide](#the-guide)
   + [Audience](#audience)
   + [Outcome](#outcome)
   + [Project High Level Purpose](#project-high-level-purpose)
-+ [Beginner](#beginner)
-  + [The tech stack, and things to read up on](#the-tech-stack-and-things-to-read-up-on)
-  + [Activity 1 - Clone the repository](#activity-1---clone-the-repository)
-  + [Activity 2 - Startup](#activity-2---startup)
-    + [Using Codespace development (Beginner friendly/quicker)](#using-codespace-development-beginner-friendlyquicker)
-    + [Using Local development (Advanced)](#using-local-development-advanced)
-    + [Get the project running](#get-the-project-running)
-  + [Activity 3 - Personalize author data](#activity-3---personalize-author-data)
-  + [Activity 4 - Finalize author data and create portfolio articles](#activity-4---finalize-author-data-and-create-portfolio-articles)
-+ [Intermediate](#intermediate)
-  + [Activity 1 - Explanation of the patterns, how it works, why it will scale as an enterprise application](#activity-1---explanation-of-the-patterns-how-it-works-why-it-will-scale-as-an-enterprise-application)
-    + [How the styling/CSS works](#how-the-stylingcss-works)
-    + [How state management/mobx works](#how-state-managementmobx-works)
-    + [How data driven state works](#how-data-driven-state-works)
-    + [How tooling \& bundle works](#how-tooling--bundle-works)
-  + [Activity 2 - Customize the layout](#activity-2---customize-the-layout)
-+ [Advanced](#advanced)
-  + [Activity 1 - Use the SpaceX API to create your own custom third party component](#activity-1---use-the-spacex-api-to-create-your-own-custom-third-party-component)
-  + [Activity 2 - Create a protfolio article about SpaceX integration](#activity-2---create-a-protfolio-article-about-spacex-integration)
-+ [Very advanced](#very-advanced)
-  + [Activity 1 - Integrate Auth0 authentication for an admin dashboard](#activity-1---integrate-auth0-authentication-for-an-admin-dashboard)
-  + [Activity 2 - Integrate a database, move your data to the database](#activity-2---integrate-a-database-move-your-data-to-the-database)
-  + [Activity 3 - Wildcard, allow users to sign up and create their own portfolios on your website](#activity-3---wildcard-allow-users-to-sign-up-and-create-their-own-portfolios-on-your-website)
+  + [Beginner](#beginner)
+    + [The tech stack, and things to read up on](#the-tech-stack-and-things-to-read-up-on)
+    + [Activity 1 - Clone the repository](#activity-1---clone-the-repository)
+    + [Activity 2 - Startup](#activity-2---startup)
+      + [Using Codespace development (Beginner friendly/quicker)](#using-codespace-development-beginner-friendlyquicker)
+      + [Using Local development (Advanced)](#using-local-development-advanced)
+      + [Get the project running](#get-the-project-running)
+    + [Activity 3 - Personalize author data](#activity-3---personalize-author-data)
+    + [Activity 4 - Finalize author data and create portfolio articles](#activity-4---finalize-author-data-and-create-portfolio-articles)
+  + [Intermediate](#intermediate)
+    + [Activity 1 - Explanation of the patterns, how it works, why it will scale as an enterprise application](#activity-1---explanation-of-the-patterns-how-it-works-why-it-will-scale-as-an-enterprise-application)
+      + [How the styling/CSS works](#how-the-stylingcss-works)
+      + [How state management/mobx works](#how-state-managementmobx-works)
+      + [How data driven state works](#how-data-driven-state-works)
+      + [How tooling \& bundle works](#how-tooling--bundle-works)
+    + [Activity 2 - Customize the layout](#activity-2---customize-the-layout)
+  + [Advanced](#advanced)
+    + [Activity 1 - Use the SpaceX API to create your own custom third party component](#activity-1---use-the-spacex-api-to-create-your-own-custom-third-party-component)
+    + [Activity 2 - Create a protfolio article about SpaceX integration](#activity-2---create-a-protfolio-article-about-spacex-integration)
+  + [Very advanced](#very-advanced)
+    + [Activity 1 - Integrate Auth0 authentication for an admin dashboard](#activity-1---integrate-auth0-authentication-for-an-admin-dashboard)
+    + [Activity 2 - Integrate a database, move your data to the database](#activity-2---integrate-a-database-move-your-data-to-the-database)
+    + [Activity 3 - Wildcard, allow users to sign up and create their own portfolios on your website](#activity-3---wildcard-allow-users-to-sign-up-and-create-their-own-portfolios-on-your-website)
 + [Project Technical Overview](#project-technical-overview)
-    + [The tech stack](#the-tech-stack)
   + [State Management (MobX)](#state-management-mobx)
   + [View (React)](#view-react)
   + [Tooling (Vite)](#tooling-vite)
 
 -------------------------------------
 
-## Guide
+## The Guide
 
 **Pro tip**: Skip to [The beginner section](#beginner) to start if you want to skip the theory
 
@@ -62,9 +61,9 @@ Because this portfolio is built up from scratch, it also serves as demonstration
 
 -------------------------------------
 
-## Beginner
+### Beginner
 
-### The tech stack, and things to read up on
+#### The tech stack, and things to read up on
 
 Feel free to dig into these when you need to. They are roughly ordered by relevance.
 
@@ -81,7 +80,7 @@ Feel free to dig into these when you need to. They are roughly ordered by releva
 - github actions https://docs.github.com/en/actions
 - github pages https://docs.github.com/en/pages
 
-### Activity 1 - Clone the repository
+#### Activity 1 - Clone the repository
 
 > **Prerequisites**
 > - Create a Github Account
@@ -97,16 +96,16 @@ Feel free to dig into these when you need to. They are roughly ordered by releva
   - Wait for the project to build and you should see a URL in the deploy step output
 - Visit github pages once enabled
 
-### Activity 2 - Startup 
+#### Activity 2 - Startup 
 
 Choose one of the two development methods below, codespaces or local development.
 
-#### Using Codespace development (Beginner friendly/quicker)
+##### Using Codespace development (Beginner friendly/quicker)
 
 - Open your [newly forked repo in Codespaces](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository)
 - Continue to [Get the project running](#Get-the-project-running)
 
-#### Using Local development (Advanced)
+##### Using Local development (Advanced)
 
 **Prerequisites:**
 - Install `git`
@@ -117,7 +116,7 @@ Then:
 - Clone the repo to your local machine
 - Open in VSCode
 
-#### Get the project running
+##### Get the project running
 
 - Open the CLI Terminal
 - Install pnpm:
@@ -128,7 +127,7 @@ Then:
   > `pnpm dev`
 - Open your website development page via the link provided
 
-### Activity 3 - Personalize author data
+#### Activity 3 - Personalize author data
 
 - Navigate to `./src/data/authors.ts`
 - Modify the first user with your own details:
@@ -139,7 +138,7 @@ Then:
 - You can also change the color theme
   - Try changing the colors and see them change on the dev server
 
-### Activity 4 - Finalize author data and create portfolio articles
+#### Activity 4 - Finalize author data and create portfolio articles
 
 - Navigate to `./src/data/authors.ts`,
   - Delete the other example author so there is only one author
@@ -157,41 +156,41 @@ Then:
 
 The project should be yours now.
 
-## Intermediate
+### Intermediate
 
-### Activity 1 - Explanation of the patterns, how it works, why it will scale as an enterprise application
+#### Activity 1 - Explanation of the patterns, how it works, why it will scale as an enterprise application
 
-#### How the styling/CSS works
+##### How the styling/CSS works
 
 - Explain `@emotion/react`, cssprop, styled() and theming
   - Theming options pros/cons:
     - Css variables
     - theme provider
 
-#### How state management/mobx works
+##### How state management/mobx works
 
 - Explain mobx tree, hooks, rendering overview
 
 
-#### How data driven state works
+##### How data driven state works
 
 - Explain author data in detail
 
 
-#### How tooling & bundle works
+##### How tooling & bundle works
 
 - Explain vite, github actions, github pages
 - Explain linter, tsconfig, packagejson deps justification, pnpm
 
-### Activity 2 - Customize the layout
+#### Activity 2 - Customize the layout
 
 - Add in a background image from `unsplash.com`
 - Re-order the components to your liking
 - Make your own changes, as you wish, experiment
 
-## Advanced
+### Advanced
 
-### Activity 1 - Use the SpaceX API to create your own custom third party component
+#### Activity 1 - Use the SpaceX API to create your own custom third party component
 
 - Explain why valuable demonstration
   - Third party API integration (GraphQL, zeus client)
@@ -201,7 +200,7 @@ The project should be yours now.
   - Demonstrates how to make your app work offline
   - Optimizes calls to API to prevent unecessary work, API throttling
 
-### Activity 2 - Create a protfolio article about SpaceX integration
+#### Activity 2 - Create a protfolio article about SpaceX integration
 
 - User will write about Activity 1
   - how it works
@@ -209,9 +208,9 @@ The project should be yours now.
   - showcase with screenshots
 - Review portfolio article on public website after pushing changes
 
-## Very advanced
+### Very advanced
 
-### Activity 1 - Integrate Auth0 authentication for an admin dashboard
+#### Activity 1 - Integrate Auth0 authentication for an admin dashboard
 
 - Create Auth0 account
 - Wire up new route to /admin page
@@ -219,7 +218,7 @@ The project should be yours now.
 - Demonstrate login process working in public website
 - Create portfolio article about this page
 
-### Activity 2 - Integrate a database, move your data to the database
+#### Activity 2 - Integrate a database, move your data to the database
 
 - Use something like supabase, faunadb etc.
 - Wire up graphql schemas
@@ -233,7 +232,7 @@ The project should be yours now.
 - Discard ./src/data
 - Application is now entirely enterprise scalable, data driven
 
-### Activity 3 - Wildcard, allow users to sign up and create their own portfolios on your website
+#### Activity 3 - Wildcard, allow users to sign up and create their own portfolios on your website
 
 - Restructure db to allow for multiple users
 - Create sign up page
@@ -248,8 +247,6 @@ The project should be yours now.
 The project's patterns and tools have been chosen as they will scale to a enterprise-level application and are easy to learn for your future team. You can use the same tools and patterns applied within this project to produce an application of any size, for web, mobile, desktop.
 
 Architecturally we are employing tools that are mature within the ecosystem, such as React, MobX.
-
-#### The tech stack
 
 Lets start by explaining the biggest patterns:
 
