@@ -23,6 +23,7 @@ import { useRootStore } from '../state/reactContext';
 import { DateTime } from 'luxon';
 import { defaultMuiTheme } from '../state/theme';
 import { PortoflioArticleCardList } from './articles';
+import { DateInputs } from '../data/Author';
 
 export const PortfolioPage = observer(() => {
   const { authors } = useRootStore();
@@ -173,8 +174,8 @@ const WorkTimeline = observer<{
     subTitle: string;
     description: string;
     date?: {
-      from: Date;
-      to: Date;
+      from: DateInputs;
+      to: DateInputs;
     };
   }[];
 }>(({ heading, items }) => (
@@ -203,8 +204,8 @@ const WorkTimeline = observer<{
           {/* TODO: describe this in tut */}
           {!!work.date && (
             <TimelineOppositeContent color="text.secondary">
-              {DateTime.fromJSDate(work.date.from).toFormat('yyyy-MM')} &mdash;{' '}
-              {DateTime.fromJSDate(work.date.to).toFormat('yyyy-MM')}
+              {inputDateToText(work.date.from)} &mdash;{' '}
+              {inputDateToText(work.date.to)}
             </TimelineOppositeContent>
           )}
           <TimelineSeparator>
@@ -234,3 +235,8 @@ const WorkTimeline = observer<{
     </Timeline>
   </Grid>
 ));
+
+function inputDateToText(input: DateInputs) {
+  if (typeof input === 'string') return input;
+  return DateTime.fromJSDate(input).toFormat('yyyy-MM');
+}
