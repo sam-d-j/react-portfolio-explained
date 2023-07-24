@@ -93,8 +93,10 @@ Feel free to dig into these when you need to. They are roughly ordered by releva
   - Goto settings
   - In the sidebar, select Pages
   - In the dropdown, select Deploy with github Actions
-  - Save, then visit Actions (top left of screen)
-  - Trigger a workflow for Static deploy, select branch `main`
+  - Visit Actions (top left of screen)
+  - Click the green button, `I understand my workflows, etc.`
+  - Click `Deploy static content to pages`
+  - Click `Run workflow`, ensuring the is set to `main`
   - Wait for the project to build and you should see a URL in the deploy step output
 - Visit github pages once enabled
 
@@ -164,23 +166,24 @@ The project should be yours now.
 
 ##### How the styling/CSS works
 
+TODO:
 - Explain `@emotion/react`, cssprop, styled() and theming
   - Theming options pros/cons:
     - Css variables
     - theme provider
 
 ##### How state management/mobx works
-
+TODO:
 - Explain mobx tree, hooks, rendering overview
 
 
 ##### How data driven state works
-
+TODO:
 - Explain author data in detail
 
 
 ##### How tooling & bundle works
-
+TODO:
 - Explain vite, github actions, github pages
 - Explain linter, tsconfig, packagejson deps justification, pnpm
 
