@@ -122,19 +122,21 @@ const Footer = observer(() => {
       `}
     >
       <Typography variant="body2">Portfolio tut</Typography>
-      <Select
-        label={'Select author'}
-        size="small"
-        value={selectedAuthor?.id ?? ''}
-        onChange={(e) => setSelectedAuthor(e.target.value)}
-      >
-        {authors.map((author) => (
-          <MenuItem key={author.id} value={author.id}>
-            {author.fullName}
-          </MenuItem>
-        ))}
-        <MenuItem disabled value={''} hidden></MenuItem>
-      </Select>
+      {authors.length > 1 ? (
+        <Select
+          label={'Select author'}
+          size="small"
+          value={selectedAuthor?.id ?? ''}
+          onChange={(e) => setSelectedAuthor(e.target.value)}
+        >
+          {authors.map((author) => (
+            <MenuItem key={author.id} value={author.id}>
+              {author.fullName}
+            </MenuItem>
+          ))}
+          <MenuItem disabled value={''} hidden></MenuItem>
+        </Select>
+      ) : null}
     </Grid>
   );
 });
