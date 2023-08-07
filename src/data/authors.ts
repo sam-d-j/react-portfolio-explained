@@ -9,9 +9,9 @@ const author1 = {
     mode: 'dark',
   },
   name: {
-    first: 'John',
-    last: 'Doe',
-    title: 'Software Developer',
+    first: 'Sam',
+    last: 'Johnson',
+    title: 'Software Engineer',
   },
   biography: '',
   email: 'johndoedoe@someemail.com',
@@ -74,37 +74,5 @@ const author1 = {
   ],
 } satisfies Author;
 
-const author2 = {
-  palette: {
-    primary: '#ff07f0',
-    secondary: '#f50057',
-    mode: 'dark',
-  },
-  name: {
-    first: 'Jane',
-    last: 'Doe',
-    title: 'Instructional Designer',
-  },
-  biography: '',
-  email: 'janedoedoe@someemail.com',
-  proficiencies: [],
-  portfolioArticles: {
-    id: 'author1',
-    // re-using articles for show
-    articles: {},
-  },
-  workHistory: [
-    {
-      date: {
-        from: new Date('2019-01-01'),
-        to: new Date('2020-01-01'),
-      },
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nunc nisl aliquam nisl, eget aliquam nisl nisl si',
-      title: 'Instructional Designer',
-      subTitle: 'Some Company',
-    },
-  ],
-} satisfies Author;
 
-export const authorsStaticData = [author1, author2];
+export const authorsStaticData = [author1];
